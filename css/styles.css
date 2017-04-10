@@ -20,7 +20,6 @@ img {
  }
 .petPic {
   display: none;
-
 }
 .petInfo img {
   float: right;
@@ -32,4 +31,10 @@ img {
 .clickable:hover{
   text-decoration: underline;
   color: green;
+}
+.thanks {
+  display: none;
+}
+.adoption {
+  display: none;
 }
