@@ -7,33 +7,59 @@ function Pet(type, name, age, status, bio){
   this.bio = bio;
 }
 
-var Mitsy = new Pet ("dog", "Mitsy", "2", "Adopted");
+var Mitsy = new Pet ("dog", "Mitsy", "2", "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Yeller = {type: "dog", name: "Yeller", age: "2", status: "Adopted"};
+var Yeller = new Pet ("dog", "Yeller", "2",  "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Fido = {type: "cat", name: "Fido", age: "2", status: "Adopted"};
+var Fido = new Pet ("cat", "Fido", "2", "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Buddy = {type: "dog", name: "Buddy", age: "2", status: "Adopted"};
+var Buddy = new Pet ("dog",
+ "Buddy", "2",
+ "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Whiskers = {type: "cat", name: "Whiskers", age: "2", status: "Adopted"};
+var Whiskers = new Pet ("cat",
+ "Whiskers", "2",
+ "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Bucky = {type: "cat", name: "Bucky", age: "2", status: "Adopted"};
+var Bucky = new Pet ("cat",
+ "Bucky", "2",
+ "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Copper = {type: "snake", name: "Copper", age: "2", status: "Adopted"};
+var Copper =new Pet  ("snake",
+ "Copper", "2",
+ "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Cujo = {type: "bunny", name: "Cujo", age: "2", status: "Adopted",  bio:"Fish gotta swim birds gotta fly... I gotta sing and sing until I FIND MY FOREVER HOME WITH YOU! (Fooled ya, didn't I?) I'm Daisy, and I'm so full of love that my foster mom says I'd be a great therapy dog" };
+var Cujo = new Pet ("bunny",
+ "Cujo", "2", "Adopted", "Fish gotta swim birds gotta fly... I gotta sing and sing until I FIND MY FOREVER HOME WITH YOU! (Fooled ya, didn't I?) I'm Daisy, and I'm so full of love that my foster mom says I'd be a great therapy dog" );
 
+finder = function(){
+  if(pName === "Mitsy"){
+    Mitsy.populate();
+  }else if(pName === "Yeller"){
+    Yeller.populate();
+  }else if(pName === "Fido"){
+    Fido.populate();
+  }else if(pName === "Buddy"){
+    Buddy.populate();
+  }else if(pName === "Whiskers"){
+    Whiskers.populate();
+  }else if(pName === "Bucky"){
+    Bucky.populate();
+  }else if(pName === "Copper"){
+    Copper.populate();
+  }else if(pName === "Cujo"){
+    Cujo.populate();
+  }
+
+}
 
 Pet.prototype.populate = function(Pet){
-  console.log(Pet)
-
   $('.petStats').append("<li>" + this.name + "</li>");
   $('.petStats').append("<li>" + this.type + "</li>");
   $('.petStats').append("<li>" + this.age + "</li>");
   $('.petStats').append("<li>" + this.status + "</li>");
-
+  $(".petBio").text(this.bio);
 }
-
 
 //U.I.
 $(document).ready(function () {
@@ -42,18 +68,26 @@ $(document).ready(function () {
 
   $(".petClicks li").click(function (event) {
     event.preventDefault();
-    var pName = $(this).text();
-    console.log(typeof pName);
-    console.log(Mitsy.type);
-    Mitsy.populate(pName);
+    $(".homePic").hide();
+    $(".petPic").hide();
+    $(".petStats li").remove();
+    pName = $(this).text();
+    finder(pName);
+    $("#" + pName).show();
+
 
 
   });
 
   $(".center").click(function (event) {
     event.preventDefault();
-    newPet.populate(Cujo.name, Cujo.type, Cujo.age, Cujo.status);
-
+    $(".adoption").show();
+    $(".adoptForm").submit(function(event){
+      event.preventDefault();
+      var customerName = $("#customerName").val();
+      $(".thanks").show();
+      $(".thankYou").text(customerName);
+  });
   });
 
   $("#adoptionStatus").click(function (event) {
