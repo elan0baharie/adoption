@@ -25,3 +25,11 @@ img {
 .petInfo img {
   float: right;
 }
+.clickable {
+  cursor: pointer;
+  color: blue;
+}
+.clickable:hover{
+  text-decoration: underline;
+  color: green;
+}
