@@ -13,15 +13,27 @@ var Bucky = {type: "cat", name: "Bucky", age: "2", status: "Adopted"};
 
 var Copper = {type: "snake", name: "Copper", age: "2", status: "Adopted"};
 
-var Cujo = {type: "bunny", name: "Cujo", age: "2", status: "Adopted"};
+var Cujo = {type: "bunny", name: "Cujo", age: "2", status: "Adopted",  bio:"Fish gotta swim birds gotta fly... I gotta sing and sing until I FIND MY FOREVER HOME WITH YOU! (Fooled ya, didn't I?) I'm Daisy, and I'm so full of love that my foster mom says I'd be a great therapy dog" };
 
-
+a
 
 function Pet(){
   this.name = "";
-  this.bio = [];
+  this.type="";
+  this.age= "";
+  this.status=""
+  this.bio ="";
 }
 
+Pet.prototype.populate = function(name, type, age, status){
+  $()this.val()
+
+  $('.petStats').append("<li>" + + "." + name + "</li>");
+  $('.petStats').append("<li>" + type + "</li>");
+  $('.petStats').append("<li>" + age + "</li>");
+  $('.petStats').append("<li>" + status + "</li>");
+
+}
 
 
 
@@ -31,21 +43,34 @@ function Pet(){
 //U.I.
 $(document).ready(function () {
 
-  var newPet= new Pet();
+  var newPet = new Pet();
 
   $(".left").click(function (event) {
     event.preventDefault();
-      newPet.name = Cujo.name;
-      $("li").append(newPet.name);
-
+      newPet.type= Cujo.name;
+      $("li#one").append(newPet.name);
+      newPet.name=Cujo.type;
+      $("li#two").append(newPet.type);
+      newPet.type= Cujo.name;
+      $("li#three").append(newPet.type);
+      newPet.name=Cujo.type;
+      $("li#four").append(newPet.name);
+      newPet.type= Cujo.name;
+      $("li#five").append(newPet.type);
+      newPet.name=Cujo.type;
+      $("li#six").append(newPet.name);
       console.log(Cujo);
-
+      newPet.type= Cujo.name;
+      $("li#seven").append(newPet.type);
+      newPet.name=Cujo.type;
+      $("li#eight").append(newPet.name);
 
 
   });
 
-  $("#hideShowPet").click(function (event) {
+  $(".center").click(function (event) {
     event.preventDefault();
+    newPet.populate(Cujo.name, Cujo.type, Cujo.age, Cujo.status);
 
   });
 
@@ -61,4 +86,4 @@ $(document).ready(function () {
 // newPet.name= "Tramp";
 // newPet.age= "3";
 // newPet.type= "Dog";
-// newPet.bio= "Fish gotta swim... birds gotta fly... I gotta sing and sing until I FIND MY FOREVER HOME WITH YOU! (Fooled ya, didn't I?) I'm Daisy, and I'm so full of love that my foster mom says I'd be a great therapy dog, because apparently the opera is not hiring just now. Want to sing along?"
+// newPet.bio= , because apparently the opera is not hiring just now. Want to sing along?"
