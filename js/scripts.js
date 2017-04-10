@@ -25,6 +25,13 @@ function Pet(){
   this.bio ="";
 }
 
+Pet.prototype.populate = function(test){
+  var infoLocate = document.getElementByClass('petInfo');
+  var newLiElem = document.createElement('LI');
+  infoLocate.append(newLiElem);
+  newLiElem.append(test);
+
+}
 
 
 
@@ -34,23 +41,34 @@ function Pet(){
 //U.I.
 $(document).ready(function () {
 
-  var newPet= new Pet();
+  var newPet = new Pet();
 
   $(".left").click(function (event) {
     event.preventDefault();
-      newPet.type= Cujo.type;
-      $("li#one").append(newPet.type);
-      newPet.name=Cujo.name;
-      $("li#two").append(newPet.name);
-
+      newPet.type= Cujo.name;
+      $("li#one").append(newPet.name);
+      newPet.name=Cujo.type;
+      $("li#two").append(newPet.type);
+      newPet.type= Cujo.name;
+      $("li#three").append(newPet.type);
+      newPet.name=Cujo.type;
+      $("li#four").append(newPet.name);
+      newPet.type= Cujo.name;
+      $("li#five").append(newPet.type);
+      newPet.name=Cujo.type;
+      $("li#six").append(newPet.name);
       console.log(Cujo);
-
+      newPet.type= Cujo.name;
+      $("li#seven").append(newPet.type);
+      newPet.name=Cujo.type;
+      $("li#eight").append(newPet.name);
 
 
   });
 
-  $("#hideShowPet").click(function (event) {
+  $(".center").click(function (event) {
     event.preventDefault();
+    newPet.populate(Cujo.name);
 
   });
 
