@@ -25,11 +25,13 @@ function Pet(){
   this.bio ="";
 }
 
-Pet.prototype.populate = function(test){
-  var infoLocate = document.getElementByClass('petInfo');
-  var newLiElem = document.createElement('LI');
-  infoLocate.append(newLiElem);
-  newLiElem.append(test);
+Pet.prototype.populate = function(name, type, age, status){
+
+
+  $('.petStats').append("<li>" + name + "</li>");
+  $('.petStats').append("<li>" + type + "</li>");
+  $('.petStats').append("<li>" + age + "</li>");
+  $('.petStats').append("<li>" + status + "</li>");
 
 }
 
@@ -68,7 +70,7 @@ $(document).ready(function () {
 
   $(".center").click(function (event) {
     event.preventDefault();
-    newPet.populate(Cujo.name);
+    newPet.populate(Cujo.name, Cujo.type, Cujo.age, Cujo.status);
 
   });
 
