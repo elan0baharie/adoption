@@ -28,7 +28,7 @@ function Pet(){
 Pet.prototype.populate = function(name, type, age, status){
 
 
-  $('.petStats').append("<li>" + name + "</li>");
+  $('.petStats').append("<li>" this.value+ "." +name + "</li>");
   $('.petStats').append("<li>" + type + "</li>");
   $('.petStats').append("<li>" + age + "</li>");
   $('.petStats').append("<li>" + status + "</li>");
