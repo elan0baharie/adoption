@@ -12,6 +12,10 @@ img {
 .left {
   float: left;
 }
+.all{
+  float: left;
+  /*clear: both;*/
+}
 .right {
   float: right;
 }
@@ -37,4 +41,11 @@ img {
 }
 .adoption {
   display: none;
+}
+.success {
+  display: none;
+}
+.success img {
+  height: 200px;
+  width: auto;
 }

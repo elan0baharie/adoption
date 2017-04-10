@@ -7,11 +7,11 @@ function Pet(type, name, age, status, bio){
   this.bio = bio;
 }
 
-var Mitsy = new Pet ("dog", "Mitsy", "2", "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
+var Mitsy = new Pet ("dog", "Mitsy", "2", "Available", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Yeller = new Pet ("dog", "Yeller", "2",  "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
+var Yeller = new Pet ("dog", "Yeller", "2",  "Available", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
-var Fido = new Pet ("cat", "Fido", "2", "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
+var Fido = new Pet ("cat", "Fido", "2", "Available", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
 var Buddy = new Pet ("dog",
  "Buddy", "2",
@@ -19,7 +19,7 @@ var Buddy = new Pet ("dog",
 
 var Whiskers = new Pet ("cat",
  "Whiskers", "2",
- "Adopted", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
+ "Available", "The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).");
 
 var Bucky = new Pet ("cat",
  "Bucky", "2",
@@ -90,11 +90,26 @@ $(document).ready(function () {
   });
   });
 
-  $("#adoptionStatus").click(function (event) {
+  $(".right").click(function (event) {
     event.preventDefault();
-
+    $(".success").show();
   });
 
+  $(".left").click(function (event) {
+    event.preventDefault();
+    $(".Buddy").hide();
+    $(".Bucky").hide();
+    $(".Copper").hide();
+    $(".Cujo").hide();
+  });
+
+  $(".all").click(function (event) {
+    event.preventDefault();
+    $(".Buddy").show();
+    $(".Bucky").show();
+    $(".Copper").show();
+    $(".Cujo").show();
+  });
 });
 
 //
