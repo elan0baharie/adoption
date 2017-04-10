@@ -15,7 +15,7 @@ var Copper = {type: "snake", name: "Copper", age: "2", status: "Adopted"};
 
 var Cujo = {type: "bunny", name: "Cujo", age: "2", status: "Adopted",  bio:"Fish gotta swim birds gotta fly... I gotta sing and sing until I FIND MY FOREVER HOME WITH YOU! (Fooled ya, didn't I?) I'm Daisy, and I'm so full of love that my foster mom says I'd be a great therapy dog" };
 
-
+a
 
 function Pet(){
   this.name = "";
@@ -26,9 +26,9 @@ function Pet(){
 }
 
 Pet.prototype.populate = function(name, type, age, status){
+  $()this.val()
 
-
-  $('.petStats').append("<li>" this.value+ "." +name + "</li>");
+  $('.petStats').append("<li>" + + "." + name + "</li>");
   $('.petStats').append("<li>" + type + "</li>");
   $('.petStats').append("<li>" + age + "</li>");
   $('.petStats').append("<li>" + status + "</li>");
