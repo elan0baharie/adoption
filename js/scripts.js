@@ -1,5 +1,13 @@
 //B.L.
-var Mitsy = {type: "dog", name: "Mitsy", age: "2", status: "Adopted"};
+function Pet(type, name, age, status, bio){
+  this.name = name;
+  this.type= type;
+  this.age= age;
+  this.status= status;
+  this.bio = bio;
+}
+
+var Mitsy = new Pet ("dog", "Mitsy", "2", "Adopted");
 
 var Yeller = {type: "dog", name: "Yeller", age: "2", status: "Adopted"};
 
@@ -15,55 +23,29 @@ var Copper = {type: "snake", name: "Copper", age: "2", status: "Adopted"};
 
 var Cujo = {type: "bunny", name: "Cujo", age: "2", status: "Adopted",  bio:"Fish gotta swim birds gotta fly... I gotta sing and sing until I FIND MY FOREVER HOME WITH YOU! (Fooled ya, didn't I?) I'm Daisy, and I'm so full of love that my foster mom says I'd be a great therapy dog" };
 
-a
 
-function Pet(){
-  this.name = "";
-  this.type="";
-  this.age= "";
-  this.status=""
-  this.bio ="";
-}
+Pet.prototype.populate = function(Pet){
+  console.log(Pet)
 
-Pet.prototype.populate = function(name, type, age, status){
-  $()this.val()
-
-  $('.petStats').append("<li>" + + "." + name + "</li>");
-  $('.petStats').append("<li>" + type + "</li>");
-  $('.petStats').append("<li>" + age + "</li>");
-  $('.petStats').append("<li>" + status + "</li>");
+  $('.petStats').append("<li>" + this.name + "</li>");
+  $('.petStats').append("<li>" + this.type + "</li>");
+  $('.petStats').append("<li>" + this.age + "</li>");
+  $('.petStats').append("<li>" + this.status + "</li>");
 
 }
-
-
-
-
 
 
 //U.I.
 $(document).ready(function () {
 
-  var newPet = new Pet();
+  // var newPet = new Pet();
 
-  $(".left").click(function (event) {
+  $(".petClicks li").click(function (event) {
     event.preventDefault();
-      newPet.type= Cujo.name;
-      $("li#one").append(newPet.name);
-      newPet.name=Cujo.type;
-      $("li#two").append(newPet.type);
-      newPet.type= Cujo.name;
-      $("li#three").append(newPet.type);
-      newPet.name=Cujo.type;
-      $("li#four").append(newPet.name);
-      newPet.type= Cujo.name;
-      $("li#five").append(newPet.type);
-      newPet.name=Cujo.type;
-      $("li#six").append(newPet.name);
-      console.log(Cujo);
-      newPet.type= Cujo.name;
-      $("li#seven").append(newPet.type);
-      newPet.name=Cujo.type;
-      $("li#eight").append(newPet.name);
+    var pName = $(this).text();
+    console.log(typeof pName);
+    console.log(Mitsy.type);
+    Mitsy.populate(pName);
 
 
   });
